@@ -1,0 +1,1 @@
+mvn clean package -P prod && podman rm api_test & podman rmi web_api & podman build -t web_api . && podman run --name api_test -d -p 7777:7777 web_api
